@@ -28,7 +28,6 @@ namespace DatingApp.API.Data
                 return null;
 
             return user;
-            
         }
 
         private bool VerifyPasswordHash(string password, byte[] passwordHash, byte[] passwordSalt)
@@ -73,8 +72,8 @@ namespace DatingApp.API.Data
 
         public async Task<bool> UserExists(string username)
         {
-            if(await _context.Users.AnyAsync(x=>x.Username == username))
-                return true;
+             if(await _context.Users.AnyAsync(x=>x.Username == username))
+                 return true;
             
             return false;
         }
